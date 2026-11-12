@@ -10,7 +10,11 @@ The build plan, stage by stage: https://claude.ai/artifact/VCR4oSnReaqv5M997uBG9
 
 Stage 1 of 10: foundation. The app opens and shows a welcome screen. Nothing else works yet.
 
-## Try the app on your Android phone
+The app is built for Android first. Testing in Expo Go also works on an iPhone.
+
+## Try the app on your phone
+
+This works on an iPhone or an Android phone.
 
 You need to do steps 1 to 3 only once.
 
@@ -22,10 +26,10 @@ You need to do steps 1 to 3 only once.
 
 ### 2. Install Expo Go on your phone
 
-1. On your Android phone, open the **Play Store**.
+1. Open the **App Store** (iPhone) or the **Play Store** (Android).
 2. Search for **Expo Go**.
-3. Press **Install**.
-4. Open Expo Go and log in with the Expo account from step 1.
+3. Press **Get** (iPhone) or **Install** (Android).
+4. Open Expo Go and log in with the Expo account from step 1. On iPhone, allow it to find devices on your local network if it asks.
 
 ### 3. Get the code on your computer
 
@@ -42,7 +46,9 @@ If you followed the setup guide, you already have Node.js, Git and VS Code. If n
 1. In VS Code, open the menu **Terminal → New Terminal**. A panel opens at the bottom.
 2. Type `npm install` and press Enter. Wait until it finishes (a few minutes the first time).
 3. Type `npx expo start --tunnel` and press Enter. A QR code (a square of black and white dots) appears.
-4. On your phone, open **Expo Go** and press **Scan QR code**. Point the camera at the QR code.
+4. Scan the QR code with your phone:
+   - iPhone: open the normal **Camera** app and point it at the QR code. Tap the yellow **Open in Expo Go** banner that appears.
+   - Android: open **Expo Go**, press **Scan QR code** and point the camera at the QR code.
 5. The SameWay welcome screen opens on your phone.
 
 To stop the app, click in the terminal and press **Ctrl+C**.
