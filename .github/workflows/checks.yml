@@ -1,0 +1,44 @@
+# Runs automatically on every pull request and on every change to main.
+# A green tick on GitHub means all of these passed.
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# The checks only need to read the code, nothing more.
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v5
+
+      - name: Install Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Formatting
+        run: npx prettier --check .
+
+      - name: Tests
+        run: npm test -- --ci
+
+      - name: Known security problems in packages (high or critical)
+        run: npm audit --audit-level=high
